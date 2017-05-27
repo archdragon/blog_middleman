@@ -1,0 +1,26 @@
+---
+title: "Krowinski.com Blog"
+tagline: "Web, tech, stuff"
+---
+
+
+
+header.welcome-header
+  .title
+    h1 =current_page.data.title
+    p =current_page.data.tagline
+  .header-bg
+  .header-fg
+
+main.container
+  - blog.articles[0...5].each do |article|
+    .row
+      .col-sm-8.col-sm-offset-2
+        section.article-preview
+          .left-icon
+            = inline_svg(article.data.icon || 'default')
+          h2
+            a href="#{article.url}" =article.title
+          p Description
+          p
+            a.read-more href="#{article.url}" Read more

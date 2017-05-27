@@ -1,0 +1,42 @@
+@import 'variables';
+
+header.post-header {
+  background-color: $theme-dark-shades;
+  color: $theme-main-brand;
+  padding: 5rem 0 5.5rem 0;
+
+  a {
+    color: $theme-light-shades;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+h1.post-title {
+  line-height: 1.25;
+}
+
+pre.highlight {
+  padding: 1.5em 1.25em;
+}
+
+main.post-main {
+  line-height: 1.75;
+  padding: 5rem 0;
+}
+
+main.post-main h2 {
+  font-size: 1.8rem;
+  padding: 2.25rem 0 0.1rem 0;
+}
+
+main.post-main li {
+  padding-bottom: 0.25rem;
+}
+
+main.post-main h2:first-child {
+  padding-top: 0;
+  margin-top: 0;
+}

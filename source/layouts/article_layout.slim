@@ -1,0 +1,18 @@
+doctype html
+html
+  = partial 'partials/header'
+
+  body class="#{page_classes}"
+    header.post-header
+      .container
+        .col-sm-8.col-sm-offset-2
+          p
+            a href="/" Krowinski.com Blog
+          h1.post-title = current_article.title
+
+    main.post-main
+      .container
+        .col-sm-8.col-sm-offset-2
+          = current_article.body
+
+    = partial 'partials/footer'
