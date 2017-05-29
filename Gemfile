@@ -12,6 +12,8 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw]
 
 gem 'redcarpet'
 
+gem 'nokogiri'
+
 # Middleman Gems
 gem 'middleman-sprockets', '>= 4.0.0'
 gem 'middleman-compass', '>= 4.0.0'
@@ -21,4 +23,3 @@ gem "middleman-blog", "~> 4.0"
 gem "middleman-syntax"
 gem 'middleman-deploy', '~> 2.0.0.pre.alpha'
 gem 'middleman-alias'
-

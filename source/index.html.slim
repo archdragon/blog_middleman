@@ -13,7 +13,7 @@ header.welcome-header
   .header-fg
 
 main.container
-  - blog.articles[0...5].each do |article|
+  - blog.articles[0...8].each do |article|
     .row
       .col-sm-8.col-sm-offset-2
         section.article-preview
@@ -21,6 +21,6 @@ main.container
             = inline_svg(article.data.icon || 'default')
           h2
             a href="#{article.url}" =article.title
-          p Description
+          p =ArticleHelpers.summary(article)
           p
             a.read-more href="#{article.url}" Read more

@@ -23,9 +23,9 @@ page '/*.txt', layout: false
 ###
 
 # Reload the browser automatically whenever files change
-# configure :development do
-#   activate :livereload
-# end
+configure :development do
+  activate :livereload
+end
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -55,18 +55,6 @@ activate :blog do |blog|
   blog.layout = "article_layout"
 end
 
-helpers do
-  def inline_svg(name)
-    root = Middleman::Application.root
-    file_path = "#{root}/source/images/icons/#{name}.svg"
-    if File.exists?(file_path)
-      File.read(file_path)
-    else
-      "<span class='icon-error'>Icon #{name} not found</span>"
-    end
-  end
-end
-
 activate :deploy do |deploy|
   deploy.deploy_method = :git
   # Optional Settings
@@ -76,6 +64,14 @@ activate :deploy do |deploy|
   # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
 end
 
-#redirect "read/elixir-ecto-error-unknown-type-text", to: "articles/fix-for-ecto-argumenterror-invalid-or-unknown-type-text-for-field-text.html"
+redirect "read/elixir-ecto-error-unknown-type-text/index.html", to: "/fix-for-ecto-argumenterror-invalid-or-unknown-type-text-for-field-text.html"
+redirect "read/renew-certificate-lets-encrypt-certbot/index.html", to: "/renewing-let-s-encrypt-certificate-with-certbot.html"
+redirect "read/postgres-directory-pre-existing-postmaster/index.html", to: "/postgresql-error-fix-this-data-directory-appears-to-be-running-a-pre-existing-postmaster.html"
+redirect "read/fixing-loaderror-cannot-load-such-file-bcrypt/index.html", to: "/error-fix-loaderror-cannot-load-such-file-bcrypt.html"
+redirect "read/ruby-readline-problems/index.html", to: "/dealing-with-ruby-s-readline-problems.html"
+redirect "read/html-helper-elm/index.html", to: "/creating-an-html-helper-in-elm.html"
 
 activate :alias
+
+require "lib/custom_helpers"
+helpers CustomHelpers
