@@ -3,6 +3,7 @@ title: "Dealing with Ruby's Readline problems"
 date: 2017-05-28 20:37 UTC
 custom_summary: Fixing an error with Readline, by using the pure ruby readline gem.
 tags:
+id: 4
 ---
 
 ## Error:

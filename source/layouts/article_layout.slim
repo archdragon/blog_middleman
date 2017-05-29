@@ -15,4 +15,7 @@ html
         .col-sm-8.col-sm-offset-2
           = current_article.body
 
+          = partial 'partials/disqus_comments', locals: { page_id: current_article.data.id,
+            page_url: ArticleHelpers.full_url(current_article) }
+
     = partial 'partials/footer'

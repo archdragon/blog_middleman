@@ -4,6 +4,7 @@ date: 2017-05-22 18:25 UTC
 icon: "database"
 custom_summary: 'Fix for "this data directory appears to be running a pre-existing postmaster" error.'
 tags:
+id: 3
 ---
 
 ## Error

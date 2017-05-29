@@ -3,6 +3,7 @@ title: Fix for Ecto - ArgumentError - invalid or unknown type :text for field :t
 date: 2017-05-28 12:37 UTC
 custom_summary: "Fixing Ecto error: (ArgumentError) invalid or unknown type :text for field :text"
 tags:
+id: 2
 ---
 
 ## Error:

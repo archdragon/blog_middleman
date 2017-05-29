@@ -3,6 +3,7 @@ title: 'Error fix: "LoadError: cannot load such file -- bcrypt"'
 date: 2017-05-28 19:50 UTC
 tags:
 custom_summary: One of my old apps was developed mostly on Windows, while my production server runs on Ubuntu. Because of that, after running "bundle install", only the Windows version of bcrypt was present in my "Gemfile.lock".
+id: 1
 ---
 
 ## Symptoms
@@ -29,13 +30,13 @@ The solution is not that elegant, but as far as I know it's the only way to fix 
 
 1. First I removed Gemfile.lock from version control by adding it to .gitignore
 
-    ```
+```
 /.Gemfile
 ```
 
 2. Before running *git commit* I used the git command:
 
-    ```
+```
 git rm --cached Gemfile.lock
 ```
 
@@ -43,16 +44,16 @@ git rm --cached Gemfile.lock
 
 3. I use *Capistrano* (with the bundler Gem) to deploy my Rails applications.
 
-   While running bundle install Capistrano uses the *--deployment flag*, which prevents the new Gemfile.lock from being created.
+    While running bundle install Capistrano uses the *--deployment flag*, which prevents the new Gemfile.lock from being created.
 
-   To change this behavior I added the following line to my deploy.rb file:
+    To change this behavior I added the following line to my deploy.rb file:
 
+    ```ruby
+    # config/deploy.rb
+    set :bundle_flags, '--quiet'
     ```
-# config/deploy.rb
-set :bundle_flags, '--quiet'
-```
 
-   This overrides the default flags ("-- deployment --quiet") with just " --quiet", which outputs warning and errors only.
+    This overrides the default flags ("-- deployment --quiet") with just " --quiet", which outputs warning and errors only.
 
 ## It works!
 

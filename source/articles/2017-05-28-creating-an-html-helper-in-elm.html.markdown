@@ -2,6 +2,7 @@
 title: Creating an Html helper in Elm
 date: 2017-05-28 20:37 UTC
 tags:
+id: 6
 ---
 
 When learning Elm I stumbled upon a problem - I wanted to create  helper function that takes a record and returns a div Html node with based on the record's fields.
