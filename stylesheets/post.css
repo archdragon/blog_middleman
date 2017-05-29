@@ -22,7 +22,7 @@ pre.highlight {
 /* line 25, post.css.scss */
 main.post-main {
   line-height: 1.75;
-  padding: 5rem 0; }
+  padding: 4rem 0; }
 
 /* line 30, post.css.scss */
 main.post-main h2 {
@@ -37,3 +37,7 @@ main.post-main li {
 main.post-main h2:first-child {
   padding-top: 0;
   margin-top: 0; }
+
+/* line 44, post.css.scss */
+main.post-main #disqus_thread {
+  margin-top: 5rem; }

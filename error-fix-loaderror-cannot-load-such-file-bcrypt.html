@@ -1,0 +1,60 @@
+<!DOCTYPE html><html><head><meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" /><meta charset="utf-8" /><meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" /><title>Error fix: "LoadError: cannot load such file -- bcrypt"</title><link href="//fonts.googleapis.com/css?family=Bitter|Open+Sans:300" rel="stylesheet" type="text/css" /><link href="/stylesheets/site.css" rel="stylesheet" /><link href="/stylesheets/post.css" rel="stylesheet" /><link href="/stylesheets/highlight.css" rel="stylesheet" /><script src="/javascripts/all.js"></script></head><body class="error-fix-loaderror-cannot-load-such-file-bcrypt"><header class="post-header"><div class="container"><div class="col-sm-8 col-sm-offset-2"><p><a href="/">Krowinski.com Blog</a></p><h1 class="post-title">Error fix: "LoadError: cannot load such file -- bcrypt"</h1></div></div></header><main class="post-main"><div class="container"><div class="col-sm-8 col-sm-offset-2"><h2>Symptoms</h2>
+
+<p>Today, during assets precompilation on my production server I encountered a puzzling error:</p>
+<pre class="highlight plaintext"><code>LoadError: cannot load such file -- bcrypt
+</code></pre>
+<h2>The problem: Gems and different  Operating Systems</h2>
+
+<p>One of my old apps was developed mostly on Windows, while my production server runs on Ubuntu. Because of that, after running <em>bundle install</em>, only the Windows version of bcrypt was present in my <em>Gemfile.lock</em>.</p>
+<pre class="highlight plaintext"><code>bcrypt (3.1.7-x86-mingw32)
+</code></pre>
+<p>&hellip; and this is what caused the problem.</p>
+
+<h2>The solution: ignore Gemfile.lock</h2>
+
+<p>The solution is not that elegant, but as far as I know it&rsquo;s the only way to fix this particular problem.</p>
+
+<ol>
+<li>First I removed Gemfile.lock from version control by adding it to .gitignore</li>
+</ol>
+<pre class="highlight plaintext"><code>/.Gemfile
+</code></pre>
+<ol>
+<li>Before running <em>git commit</em> I used the git command:</li>
+</ol>
+<pre class="highlight plaintext"><code>git rm --cached Gemfile.lock
+</code></pre>
+<p>which removes Gemfile.lock from version control (but not from the hard drive).</p>
+
+<ol>
+<li><p>I use <em>Capistrano</em> (with the bundler Gem) to deploy my Rails applications.</p>
+
+<p>While running bundle install Capistrano uses the <em>&ndash;deployment flag</em>, which prevents the new Gemfile.lock from being created.</p>
+
+<p>To change this behavior I added the following line to my deploy.rb file:</p>
+<pre class="highlight ruby"><code><span class="c1"># config/deploy.rb</span>
+<span class="n">set</span> <span class="ss">:bundle_flags</span><span class="p">,</span> <span class="s1">'--quiet'</span>
+</code></pre>
+<p>This overrides the default flags (&ldquo;&ndash; deployment &ndash;quiet&rdquo;) with just &ldquo; &ndash;quiet&rdquo;, which outputs warning and errors only.</p></li>
+</ol>
+
+<h2>It works!</h2>
+
+<p>This is it! After running bundle install I was able to compile my assets and launch my application without any problems.</p>
+<div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+    this.page.url = "http://blog.krowinski.com/error-fix-loaderror-cannot-load-such-file-bcrypt.html";  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = "1"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//krowinski-blog.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div></div></main><footer>&nbsp;</footer></body></html>

@@ -1565,4 +1565,4 @@ h2 a {
 /* line 118, site.css.scss */
 footer {
   background-color: #22283b;
-  height: 20px; }
+  min-height: 20px; }
