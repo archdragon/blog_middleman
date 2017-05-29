@@ -1,6 +1,6 @@
 module CustomHelpers
   module ArticleHelpers
-    BLOG_URL = "https://blog.krowinski.com"
+    BLOG_URL = "http://blog.krowinski.com"
 
     def self.summary(article)
       article.data.custom_summary || article.summary
