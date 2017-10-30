@@ -23,3 +23,7 @@ gem "middleman-blog", "~> 4.0"
 gem "middleman-syntax"
 gem 'middleman-deploy', '~> 2.0.0.pre.alpha'
 gem 'middleman-alias'
+gem 'middleman-s3_sync'
+gem 'middleman-dotenv', '~> 2.0'
+
+gem 'mime-types'
