@@ -1,6 +1,6 @@
 ---
 title: Speeding up sass-brunch
-custom_summary: 'Fixing issues with long compile times for the.'
+custom_summary: 'Fixing issues with long compile times for the SASS/SCSS files.'
 date: 2017-09-09 11:47 UTC
 tags:
 id: 7
