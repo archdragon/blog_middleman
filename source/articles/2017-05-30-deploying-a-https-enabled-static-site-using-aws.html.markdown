@@ -2,6 +2,7 @@
 title: Deploying a https enabled static site using AWS
 date: 2017-05-30 08:35 UTC
 tags: aws, middleman, static site
+published: false
 ---
 
 ## Introduction
