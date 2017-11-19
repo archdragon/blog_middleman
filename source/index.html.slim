@@ -13,14 +13,9 @@ header.welcome-header
   .header-fg
 
 main.container
-  - blog.articles[0...8].each do |article|
-    .row
-      .col-sm-8.col-sm-offset-2
-        section.article-preview
-          .left-icon
-            = inline_svg(article.data.icon || 'default')
-          h2
-            a href="#{article.url}" =article.title
-          p =ArticleHelpers.summary(article)
-          p
-            a.read-more href="#{article.url}" Read more
+  .row
+    - per_column = 3
+    - for col_num in 0..2
+      .col-sm-4
+        - blog.articles[(col_num * per_column)...((col_num + 1) * per_column)].each do |article|
+          = partial 'partials/article_preview', locals: { article: article }

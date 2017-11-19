@@ -104,18 +104,89 @@ h2 a {
 }
 
 .article-preview {
+  border-radius: 5px;
+  max-height: 450px;
+  background-color: $theme-light-shades;
+  box-shadow: 0 0 5px 2px transparentize($shadow-basic-color, 0.15), 0 6px 5px 0 transparentize($shadow-basic-color, 0.15);
   //margin-left: 50px;
-  margin-bottom: 5rem;
+  overflow: hidden;
+  margin-bottom: 30px;
+  position: relative;
 }
 
-.article-preview p {
-  margin-left: $left-icon-width;
+.article-preview > header {
+  display: table;
+  //height: 160px;
+  //padding: 1rem 1.5rem;
+  padding: 1.5rem;
+  padding-bottom: 0;
+  //background-color: $theme-main-brand;
+  background-color: $theme-light-shades;
+  width: 100%;
+  //height: 150px;
+
+  h2 {
+    //display: table-cell;
+    //vertical-align: bottom;
+    padding: 0;
+    margin: 0;
+  }
+
+  .icon {
+    display: table-cell;
+    display: none;
+    text-align: center;
+    vertical-align: middle;
+    svg {
+      height: 60px;
+      width: 60px;
+    }
+
+    g > path {
+      fill: $theme-light-shades;
+    }
+  }
+}
+
+.article-preview > section.body {
+  text-align: justify;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  h2 {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  padding-bottom: 4.5rem;
+  padding-top: 0;
 }
 
 .read-more {
+  // background: linear-gradient(transparentize($theme-light-shades, 1), transparentize($theme-light-shades, 0.25), $theme-light-shades, $theme-light-shades);
+  display: block;
+  width: 100%;
+  position: absolute;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: transparentize($theme-light-accent, 0.95);
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 footer {
   background-color: $theme-dark-shades;
   min-height: 20px;
+}
+
+.index > .container {
+  margin-top: -140px;
+}
+
+.index > .container .col-sm-4 {
+  z-index: 5;
 }
