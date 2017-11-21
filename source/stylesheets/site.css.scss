@@ -105,9 +105,10 @@ h2 a {
 
 .article-preview {
   border-radius: 5px;
+  border: 1px solid #cfcfcf;
   max-height: 450px;
   background-color: $theme-light-shades;
-  box-shadow: 0 0 5px 2px transparentize($shadow-basic-color, 0.15), 0 6px 5px 0 transparentize($shadow-basic-color, 0.15);
+  box-shadow: 0 0 5px 2px transparentize(lighten($shadow-basic-color, 20%), 0.15), 0 6px 5px 0 transparentize(lighten($shadow-basic-color, 20%), 0.15);
   //margin-left: 50px;
   overflow: hidden;
   margin-bottom: 30px;
