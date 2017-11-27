@@ -1,0 +1,22 @@
+---
+title: "Krowinski.com Blog"
+tagline: "Web, tech, stuff"
+---
+
+- current_page.data.title = "Articles with '#{tagname}' tag - #{current_page.data.title}"
+
+header.post-header
+  .container
+    .col-sm-8.col-sm-offset-2
+      p
+        a href="/" Krowinski.com Blog
+      h1.post-title = tagname
+
+main.post-main
+  .container
+    .col-sm-8.col-sm-offset-2
+      h2
+        = "All articles tagged with '#{tagname}'"
+      - page_articles.each do |article|
+        .tagged-article-preview
+          a href="#{article.url}" = article.title

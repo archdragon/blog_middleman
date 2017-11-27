@@ -1,7 +1,7 @@
 ---
 title: 'Error fix: "LoadError: cannot load such file -- bcrypt"'
 date: 2017-05-28 19:50 UTC
-tags:
+tags: ruby, error, bcrypt
 custom_summary: One of my old apps was developed mostly on Windows, while my production server runs on Ubuntu. Because of that, after running "bundle install", only the Windows version of bcrypt was present in my "Gemfile.lock".
 id: 1
 ---

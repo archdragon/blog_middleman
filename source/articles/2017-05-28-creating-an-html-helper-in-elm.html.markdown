@@ -1,7 +1,7 @@
 ---
 title: Creating an Html helper in Elm
 date: 2017-05-28 20:37 UTC
-tags:
+tags: elm, html
 id: 6
 ---
 

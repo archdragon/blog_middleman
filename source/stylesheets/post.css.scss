@@ -63,3 +63,19 @@ main.post-main .post-image {
   }
 
 }
+
+header.post-header .article-tags a {
+  font-size: 1rem;
+  display: inline-block;
+  line-height: 1;
+  color: transparentize($theme-light-shades, 0.4);
+  background-color: lighten($theme-dark-shades, 5%);
+  padding: 6px 9px;
+  border-radius: 4px;
+  margin: 0 10px 5px 0;
+  &:hover {
+    text-decoration: none;
+    color: $theme-light-shades;
+    background-color: lighten($theme-dark-shades, 10%);
+  }
+}

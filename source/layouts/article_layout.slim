@@ -10,9 +10,15 @@ html
             a href="/" Krowinski.com Blog
           h1.post-title = current_article.title
 
+          - if current_article.tags.length > 0
+            .article-tags
+              - current_article.tags.each do |tag|
+                a href="/tags/#{tag}.html" = tag
+
     main.post-main
       .container
         .col-sm-8.col-sm-offset-2
+
           = current_article.body
 
           = partial 'partials/disqus_comments', locals: { page_id: current_article.data.id,

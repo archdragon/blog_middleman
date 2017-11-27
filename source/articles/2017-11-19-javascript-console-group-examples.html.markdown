@@ -3,6 +3,7 @@ title: JavaScript console.group - 4 useful examples
 date: 2017-11-19 12:41 UTC
 tags:
 custom_summary: 'Keep your console logs clean and readable with console.group.'
+tags: javascript, js, console, console.group, debugging
 ---
 
 ## Example code and screenshots

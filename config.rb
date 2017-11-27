@@ -44,7 +44,7 @@ activate :syntax
 # Build-specific configuration
 configure :build do
   # Minify CSS on build
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
   # activate :minify_javascript
@@ -55,6 +55,7 @@ activate :blog do |blog|
   blog.permalink = "{title}.html"
   blog.sources = "articles/{year}-{month}-{day}-{title}.html"
   blog.layout = "article_layout"
+  blog.tag_template = "tag"
 end
 
 activate :deploy do |deploy|
