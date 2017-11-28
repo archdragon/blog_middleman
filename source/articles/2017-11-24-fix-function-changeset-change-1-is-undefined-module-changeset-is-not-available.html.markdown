@@ -1,26 +1,44 @@
 ---
 title: Fix "function Changeset.change/1 is undefined (module Changeset is not available)"
 date: 2017-11-24 19:35 UTC
-tags:
-published: false
+tags: ecto, elixir, error
+custom_summary: 'Correctly aliasing/importing Ecto.Changeset.'
 ---
 
+## Error example
 
-Error:
+```elixir
 function Changeset.change/1 is undefined (module Changeset is not available)
+```
 
-Changeset is in the - you are not correctly importing/aliasing it in your module
+This error means that you are not correctly importing/aliasing `Ecto.Changeset` in your module.
 
-## Scenario 1
-If you have
+## Fix - Scenario 1
+If, in your module, you have:
+
+```elixir
 import Ecto.Changeset
+```
 
-then use just:
+then in your function the code you can just use:
 
-change(......)
+```
+change(...)
+```
 
-## Scenario 2
+instead of `Ecto.Changest.change(...)` or `Chageset.change`
 
+## Fix - Scenario 2
+If, in your module, you use:
+
+```elixir
 alias Ecto.Changeset
+```
 
-Changeset.change()
+then use
+
+```elixir
+Changeset.change(...)
+```
+
+when you want to access the `change` function.
