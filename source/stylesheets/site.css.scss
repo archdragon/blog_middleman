@@ -37,37 +37,25 @@ main {
   padding: 5rem 0 1rem 0;
 }
 
-header.welcome-header,
-.header-fg,
-.header-bg {
-  height: 100%;
-  width: 100%;
-}
-
-.header-fg {
-  position: absolute;
-  z-index: 2;
-
-  background-color: $theme-dark-shades;
-  opacity: 0.85;
-}
-
-.header-bg {
-  position: absolute;
+header.welcome-header {
   background-size: cover;
 
   background-image: url('/images/header.jpg');
+  background-color: $theme-dark-shades;
   background-attachment: fixed;
+  min-height: 100%;
+  box-shadow: inset 0 0 0 1000px transparentize($theme-dark-shades, 0.25);
 }
 
 header.welcome-header .title {
   color: $theme-light-shades;
 
+
   h1 { color: $theme-main-brand; }
 
   position: absolute;
-  top: 60%;
-  left: 5%;
+  top: 50%;
+  left: 7%;
 
   z-index: 3;
 }
