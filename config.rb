@@ -1,5 +1,7 @@
 require 'slim'
 
+set :url_root, 'https://blog.krowinski.com'
+
 activate :dotenv
 
 ###
@@ -66,6 +68,8 @@ activate :deploy do |deploy|
   # deploy.strategy = :submodule      # commit strategy: can be :force_push or :submodule, default: :force_push
   # deploy.commit_message = 'custom-message'      # commit message (can be empty), default: Automated commit at `timestamp` by middleman-deploy `version`
 end
+
+activate :search_engine_sitemap
 
 redirect "read/elixir-ecto-error-unknown-type-text/index.html", to: "/fix-for-ecto-argumenterror-invalid-or-unknown-type-text-for-field-text.html"
 redirect "read/renew-certificate-lets-encrypt-certbot/index.html", to: "/renewing-let-s-encrypt-certificate-with-certbot.html"

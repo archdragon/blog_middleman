@@ -25,5 +25,6 @@ gem 'middleman-deploy', '~> 2.0.0.pre.alpha'
 gem 'middleman-alias'
 gem 'middleman-s3_sync'
 gem 'middleman-dotenv', '~> 2.0'
+gem 'middleman-search_engine_sitemap'
 
 gem 'mime-types'
