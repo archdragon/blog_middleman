@@ -2,9 +2,9 @@ section.article-preview
   header
     h2
       a href="#{article.url}" =article.title
-    .icon
-      = inline_svg(article.data.icon || 'default')
-    <!-- .left-icon = inline_svg(article.data.icon || 'default') -->
+    <!-- .icon = inline_svg(article.data.icon || 'default') -->
+    <!-- .background -->
+
   section.body
     p =ArticleHelpers.summary(article)
     a.read-more href="#{article.url}" Read more &raquo;

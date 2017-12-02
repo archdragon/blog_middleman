@@ -1,3 +1,5 @@
+// Variables and mixins
+
 $theme-main-brand: #37d6b2;
 $theme-light-accent: #8ea4b9;
 $theme-light-shades: #f6f3f4;
@@ -10,3 +12,7 @@ $theme-font: 'Open Sans', sans-serif;
 $theme-font-accent: 'Bitter', serif;
 
 $shadow-basic-color: rgba(20, 20, 50, 0.2);
+
+@function random_element($elements...) {
+  @return nth($elements, random(length($elements)))
+}

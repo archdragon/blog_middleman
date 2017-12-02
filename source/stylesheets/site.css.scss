@@ -4,6 +4,7 @@
 @import "grid12";
 
 $left-icon-width: 50px;
+$header-bg-height: 130px;
 
 body {
   background-color: $theme-light-shades;
@@ -103,8 +104,11 @@ h2 a {
   box-shadow: 0 0 5px 2px transparentize(lighten($shadow-basic-color, 20%), 0.15), 0 6px 5px 0 transparentize(lighten($shadow-basic-color, 20%), 0.15);
   //margin-left: 50px;
   overflow: hidden;
+
+  // margin-bottom: $header-bg-height + 30px;
   margin-bottom: 30px;
   position: relative;
+  overflow: visible;
 }
 
 .article-preview > header {
@@ -138,6 +142,17 @@ h2 a {
     g > path {
       fill: $theme-light-shades;
     }
+  }
+
+  .background {
+    border-radius: 5px 5px 0 0;
+    background-color: random_element(red, green, blue);
+    height: $header-bg-height;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-top: 0 - $header-bg-height;
   }
 }
 
@@ -177,7 +192,7 @@ footer {
 }
 
 .index > .container {
-  margin-top: -140px;
+  margin-top: -140px; // + $header-bg-height;
 }
 
 .index > .container .col-sm-4 {
