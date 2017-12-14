@@ -16,3 +16,7 @@ $shadow-basic-color: rgba(20, 20, 50, 0.2);
 @function random_element($elements...) {
   @return nth($elements, random(length($elements)))
 }
+
+@function article_radial_gradient($color) {
+  @return radial-gradient($color 0%, darken($color, 5%) 100%)
+}

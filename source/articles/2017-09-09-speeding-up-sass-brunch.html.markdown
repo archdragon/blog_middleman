@@ -5,7 +5,7 @@ date: 2017-09-09 11:47 UTC
 tags:
 id: 7
 icon: performance
-tags: bourbon, scss, compass, css
+tags: css, bourbon, scss, compass
 ---
 
 ## Solution

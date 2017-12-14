@@ -69,7 +69,7 @@ a {
   color: $theme-dark-accent;
 }
 
-h2 a {
+h2 a.post-title {
   color: inherit;
   text-decoration: none;
   border-bottom: 2px solid transparent;
@@ -105,8 +105,7 @@ h2 a {
   //margin-left: 50px;
   overflow: hidden;
 
-  // margin-bottom: $header-bg-height + 30px;
-  margin-bottom: 30px;
+  margin-bottom: $header-bg-height + 30px;
   position: relative;
   overflow: visible;
 }
@@ -131,12 +130,15 @@ h2 a {
 
   .icon {
     display: table-cell;
-    display: none;
     text-align: center;
     vertical-align: middle;
+    height: $header-bg-height;
+    width: 100%;
+
     svg {
-      height: 60px;
-      width: 60px;
+      height: 40px;
+      width: 40px;
+      transition: 0.3s all ease-in-out;
     }
 
     g > path {
@@ -145,15 +147,44 @@ h2 a {
   }
 
   .background {
+    display: table;
+    width: 100%;
     border-radius: 5px 5px 0 0;
-    background-color: random_element(red, green, blue);
+    background-image: article_radial_gradient(#3498db);
     height: $header-bg-height;
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
     margin-top: 0 - $header-bg-height;
+    transition: 0.3s all ease-in-out;
+
+    &:hover {
+      text-decoration: none;
+      border-width: 0;
+      border-bottom: 0px solid transparent;
+      filter: brightness(110%);
+      .icon svg {
+        transform: scale(1.1);
+      }
+    }
   }
+}
+
+.article-preview[data-main-tag="javascript"] .background {
+  background-image: article_radial_gradient(#e1b400);
+}
+
+.article-preview[data-main-tag="ruby"] .background {
+  background-image: article_radial_gradient(#e74c3c);
+}
+
+.article-preview[data-main-tag="css"] .background {
+  background-image: article_radial_gradient(#e67e22);
+}
+
+.article-preview[data-main-tag="elixir"] .background {
+  background-image: article_radial_gradient(#9b59b6);
 }
 
 .article-preview > section.body {
@@ -192,7 +223,7 @@ footer {
 }
 
 .index > .container {
-  margin-top: -140px; // + $header-bg-height;
+  margin-top: -140px + $header-bg-height;
 }
 
 .index > .container .col-sm-4 {

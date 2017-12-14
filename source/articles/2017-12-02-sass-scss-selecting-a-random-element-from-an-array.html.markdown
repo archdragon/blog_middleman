@@ -2,7 +2,7 @@
 title: SASS/SCSS - Selecting a random element from an array
 custom_summary: "Simple function for generating random values."
 date: 2017-12-02 19:49 UTC
-tags: scss, sass, css, random
+tags: css, scss, sass, random
 ---
 
 ## My function

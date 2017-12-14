@@ -1,9 +1,9 @@
-section.article-preview
+section.article-preview data-main-tag="#{article.tags.first}"
   header
     h2
-      a href="#{article.url}" =article.title
-    <!-- .icon = inline_svg(article.data.icon || 'default') -->
-    <!-- .background -->
+      a.post-title href="#{article.url}" =article.title
+      a.background href="#{article.url}"
+        .icon = inline_svg(article.data.icon || 'default')
 
   section.body
     p =ArticleHelpers.summary(article)
