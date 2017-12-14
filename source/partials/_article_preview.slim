@@ -1,9 +1,10 @@
 section.article-preview data-main-tag="#{article.tags.first}"
   header
     h2
-      a.post-title href="#{article.url}" =article.title
+      a.post-title href="#{article.url}" = article.title
       a.background href="#{article.url}"
         .icon = inline_svg(article.data.icon || 'default')
+        .tag-name = article.tags.first
 
   section.body
     p =ArticleHelpers.summary(article)

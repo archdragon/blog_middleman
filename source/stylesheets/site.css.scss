@@ -4,7 +4,8 @@
 @import "grid12";
 
 $left-icon-width: 50px;
-$header-bg-height: 130px;
+$header-bg-height: 70px;
+$preview-icon-size: 20px;
 
 body {
   background-color: $theme-light-shades;
@@ -105,39 +106,44 @@ h2 a.post-title {
   //margin-left: 50px;
   overflow: hidden;
 
-  margin-bottom: $header-bg-height + 30px;
+  margin-bottom: 70px + $preview-icon-size;
+  margin-top: -40px;
   position: relative;
   overflow: visible;
 }
 
 .article-preview > header {
-  display: table;
+  position: relative;
+  display: block;
   //height: 160px;
   //padding: 1rem 1.5rem;
   padding: 1.5rem;
   padding-bottom: 0;
   //background-color: $theme-main-brand;
-  background-color: $theme-light-shades;
   width: 100%;
   //height: 150px;
 
   h2 {
     //display: table-cell;
     //vertical-align: bottom;
+    position: relative;
     padding: 0;
     margin: 0;
   }
 
   .icon {
+    position: relative;
+    top: 2px;
+    left: -1px;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
-    height: $header-bg-height;
-    width: 100%;
+    float: left;
+    margin-right: 6px;
 
     svg {
-      height: 40px;
-      width: 40px;
+      height: $preview-icon-size;
+      width: $preview-icon-size;
       transition: 0.3s all ease-in-out;
     }
 
@@ -147,44 +153,53 @@ h2 a.post-title {
   }
 
   .background {
-    display: table;
-    width: 100%;
-    border-radius: 5px 5px 0 0;
-    background-image: article_radial_gradient(#3498db);
-    height: $header-bg-height;
+    border-radius: 3px;
     position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    margin-top: 0 - $header-bg-height;
+    display: block;
+    background-color: #3498db;
+    top: 0 - $preview-icon-size - 27px;
+    right: -10px;
+    text-align: center;
     transition: 0.3s all ease-in-out;
+    padding: 5px 10px;
+    text-decoration: none;
+
+    .tag-name {
+      font-family: $theme-font;
+      font-size: 1rem;
+      border-bottom-width: 0;
+      display: inline;
+      color: $theme-light-shades;
+      position: relative;
+      top: -2px;
+    }
 
     &:hover {
       text-decoration: none;
       border-width: 0;
       border-bottom: 0px solid transparent;
-      filter: brightness(110%);
       .icon svg {
         transform: scale(1.1);
+        filter: brightness(110%);
       }
     }
   }
 }
 
 .article-preview[data-main-tag="javascript"] .background {
-  background-image: article_radial_gradient(#e1b400);
+  background-color: #e1b400;
 }
 
 .article-preview[data-main-tag="ruby"] .background {
-  background-image: article_radial_gradient(#e74c3c);
+  background-color: #e74c3c;
 }
 
 .article-preview[data-main-tag="css"] .background {
-  background-image: article_radial_gradient(#e67e22);
+  background-color: #e67e22;
 }
 
 .article-preview[data-main-tag="elixir"] .background {
-  background-image: article_radial_gradient(#9b59b6);
+  background-color: #9b59b6;
 }
 
 .article-preview > section.body {
