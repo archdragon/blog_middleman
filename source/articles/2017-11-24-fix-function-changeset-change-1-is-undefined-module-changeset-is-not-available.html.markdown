@@ -1,7 +1,7 @@
 ---
 title: Fix "function Changeset.change/1 is undefined (module Changeset is not available)"
 date: 2017-11-24 19:35 UTC
-tags: elixr, ecto, error
+tags: elixir, ecto, error
 custom_summary: 'Correctly aliasing/importing Ecto.Changeset.'
 ---
 
