@@ -9,5 +9,10 @@ module CustomHelpers
     def self.full_url(article)
       BLOG_URL + article.url
     end
+
+    def self.page_id(article)
+      raise "No id provided for #{article.url}" unless article.data.id
+      article.data.id
+    end
   end
 end

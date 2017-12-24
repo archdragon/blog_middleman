@@ -1,6 +1,7 @@
 ---
 title: SASS/SCSS - Selecting a random element from an array
 custom_summary: "Simple function for generating random values."
+id: "random-element-scss"
 date: 2017-12-02 19:49 UTC
 tags: css, scss, sass, random
 ---

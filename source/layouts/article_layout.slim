@@ -21,7 +21,7 @@ html
 
           = current_article.body
 
-          = partial 'partials/disqus_comments', locals: { page_id: current_article.data.id,
+          = partial 'partials/disqus_comments', locals: { page_id: ArticleHelpers.page_id(current_article),
             page_url: ArticleHelpers.full_url(current_article) }
 
     = partial 'partials/footer'
