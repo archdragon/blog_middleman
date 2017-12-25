@@ -1,5 +1,6 @@
 ---
 title: Start CSS animation in the middle
+custom_summary: "How to start CSS at the middle (of any point really) of the animation cycle."
 date: 2017-12-24 13:29 UTC
 id: "css-animation-middle"
 tags: "css, animation, animation-delay"
