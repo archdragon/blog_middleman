@@ -1,11 +1,14 @@
-section.article-preview data-main-tag="#{article.tags.first}"
+a.article-preview href="#{article.url}" data-main-tag="#{article.tags.first}"
   header
     h2
-      a.post-title href="#{article.url}" = article.title
-      a.background href="#{article.url}"
-        .icon = inline_svg(article.data.icon || 'default')
-        .tag-name = article.tags.first
+      .post-title href="#{article.url}" = article.title
+      //a.background href="#{article.url}"
+      //  .tag-name = article.tags.first
 
   section.body
     p =ArticleHelpers.summary(article)
-    a.read-more href="#{article.url}" Read more &raquo;
+
+  // .icon = inline_svg(article.data.icon || 'default')
+
+  section.extra-info.separator_top-margin.transparent_stronger
+    span =article.date.strftime('%b %e, %Y')

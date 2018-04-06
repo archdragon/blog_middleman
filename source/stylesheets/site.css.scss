@@ -4,8 +4,8 @@
 @import "grid12";
 
 $left-icon-width: 50px;
-$header-bg-height: 70px;
 $preview-icon-size: 20px;
+$preview-cards-margin: 48px;
 
 body {
   background-color: $theme-light-shades;
@@ -36,7 +36,7 @@ header.welcome-header {
 }
 
 main {
-  padding: 5rem 0 1rem 0;
+  padding: 3rem 0 1rem 0;
 }
 
 header.welcome-header {
@@ -70,14 +70,19 @@ a {
   color: $theme-dark-accent;
 }
 
-h2 a.post-title {
+h2 .post-title {
   color: inherit;
   text-decoration: none;
   border-bottom: 2px solid transparent;
+  display: inline;
 
   &:hover {
-    border-bottom: 2px solid $theme-light-accent;
+    border-bottom: 2px solid transparentize($theme-light-accent, 0.7);
   }
+}
+
+.article-preview:hover h2 .post-title {
+  border-bottom: 2px solid transparentize($theme-light-accent, 0.7);
 }
 
 .left-icon {
@@ -98,43 +103,33 @@ h2 a.post-title {
 }
 
 .article-preview {
-  border-radius: 5px;
-  border: 1px solid #cfcfcf;
-  max-height: 450px;
-  background-color: $theme-light-shades;
-  box-shadow: 0 0 5px 2px transparentize(lighten($shadow-basic-color, 20%), 0.15), 0 6px 5px 0 transparentize(lighten($shadow-basic-color, 20%), 0.15);
-  //margin-left: 50px;
-  overflow: hidden;
-
-  margin-bottom: 70px + $preview-icon-size;
-  margin-top: -40px;
-  position: relative;
-  overflow: visible;
-}
-
-.article-preview > header {
-  position: relative;
+  color: inherit;
   display: block;
-  //height: 160px;
-  //padding: 1rem 1.5rem;
-  padding: 1.5rem;
-  padding-bottom: 0;
-  //background-color: $theme-main-brand;
-  width: 100%;
-  //height: 150px;
+  background-color: #fff;
+  font-size: 1rem;
+  margin-bottom: $preview-cards-margin;
+  padding: 2.25rem 2rem;
+  border-bottom: 3px solid #eee;
+  text-decoration: none;
 
   h2 {
-    //display: table-cell;
-    //vertical-align: bottom;
-    position: relative;
     padding: 0;
     margin: 0;
+    font-size: 1rem;
+    font-family: inherit;
+  }
+
+  section.body p,
+  section.body ol {
+    color: $theme-dark-accent;
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
 
   .icon {
-    position: relative;
-    top: 2px;
-    left: -1px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
@@ -152,37 +147,14 @@ h2 a.post-title {
     }
   }
 
-  .background {
-    border-radius: 3px;
-    position: absolute;
-    display: block;
-    background-color: #3498db;
-    top: 0 - $preview-icon-size - 27px;
-    right: -10px;
-    text-align: center;
-    transition: 0.3s all ease-in-out;
-    padding: 5px 10px;
-    text-decoration: none;
+  transition: 0.15s all ease-out;
 
-    .tag-name {
-      font-family: $theme-font;
-      font-size: 1rem;
-      border-bottom-width: 0;
-      display: inline;
-      color: $theme-light-shades;
-      position: relative;
-      top: -2px;
-    }
-
-    &:hover {
-      text-decoration: none;
-      border-width: 0;
-      border-bottom: 0px solid transparent;
-      .icon svg {
-        transform: scale(1.1);
-        filter: brightness(110%);
-      }
-    }
+  &:hover {
+    cursor: pointer;
+    transform: translateY(3px);
+    transition: 0.1s all ease-out;
+    border-bottom-width: 0;
+    margin-bottom: $preview-cards-margin + 3px;
   }
 }
 
@@ -202,45 +174,27 @@ h2 a.post-title {
   background-color: #9b59b6;
 }
 
-.article-preview > section.body {
-  text-align: justify;
-  padding: 1.5rem;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  h2 {
-    margin-top: 0;
-    padding-top: 0;
-  }
-  padding-bottom: 4.5rem;
-  padding-top: 0;
-}
-
-.read-more {
-  // background: linear-gradient(transparentize($theme-light-shades, 1), transparentize($theme-light-shades, 0.25), $theme-light-shades, $theme-light-shades);
-  display: block;
-  width: 100%;
-  position: absolute;
-  padding: 1rem 1.5rem;
-  text-align: center;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: transparentize($theme-light-accent, 0.95);
-
-  &:hover {
-    text-decoration: none;
-  }
-}
-
 footer {
   background-color: $theme-dark-shades;
   min-height: 20px;
 }
 
-.index > .container {
-  margin-top: -140px + $header-bg-height;
-}
-
 .index > .container .col-sm-4 {
   z-index: 5;
+}
+
+.separator-line_top {
+  border-top: 1px solid $theme-dark-accent;
+}
+
+.separator_top-margin {
+  margin-top: 1rem;
+}
+
+.transparent_light {
+  opacity: 0.6;
+}
+
+.transparent_stronger {
+  opacity: 0.3;
 }

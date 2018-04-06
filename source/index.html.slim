@@ -12,8 +12,6 @@ header.welcome-header
 
 main.container
   .row
-    - per_column = 3
-    - for col_num in 0..2
-      .col-sm-4
-        - blog.articles[(col_num * per_column)...((col_num + 1) * per_column)].each do |article|
-          = partial 'partials/article_preview', locals: { article: article }
+    .col-sm-12
+      - blog.articles.each do |article|
+        = partial 'partials/article_preview', locals: { article: article }
