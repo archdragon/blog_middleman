@@ -13,7 +13,7 @@ html
           - if current_article.tags.length > 0
             .article-tags
               - current_article.tags.each do |tag|
-                a href="/tags/#{tag}.html" = tag
+                a href="/tags/#{tag.downcase}.html" = tag
 
     main.post-main
       .container
