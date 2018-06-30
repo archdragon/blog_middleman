@@ -3,9 +3,7 @@ title: 'Fix for s3_sync hostname "some-hostname" does not match the server certi
 date: 2018-06-30 12:02 UTC
 tags: middleman, s3_sync, aws, amazon, openssl, error
 id: "fix-s3-sync-does-not-match-server-certificate"
-custom_summary: "Fix for the SSL problem."
-published: false
-
+custom_summary: "Fix for the problem with OpenSSL and Middleman s3_sync."
 ---
 
 ## Error
