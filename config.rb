@@ -85,7 +85,7 @@ helpers CustomHelpers
 
 activate :s3_sync do |s3_sync|
   s3_sync.bucket                     = 'blog.krowinski.com' # The name of the S3 bucket you are targeting. This is globally unique.
-  s3_sync.region                     = 'us-west-2'     # The AWS region for your bucket.
+  s3_sync.region                     = 'us-west-1'     # The AWS region for your bucket.
   s3_sync.aws_access_key_id          = ENV['AWS_KEY_ID']
   s3_sync.aws_secret_access_key      = ENV['AWS_SECRET_KEY']
   s3_sync.delete                     = false # We delete stray files by default.

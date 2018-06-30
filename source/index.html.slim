@@ -10,8 +10,7 @@ header.welcome-header
     h1 =current_page.data.title
     p =current_page.data.tagline
 
-main.container
-  .row
-    .col-sm-12
-      - blog.articles.each do |article|
-        = partial 'partials/article_preview', locals: { article: article }
+main
+  section.articles-list
+    - blog.articles.each do |article|
+      = partial 'partials/article_preview', locals: { article: article }
