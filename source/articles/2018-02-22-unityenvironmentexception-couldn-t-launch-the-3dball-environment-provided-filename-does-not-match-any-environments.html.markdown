@@ -14,3 +14,13 @@ UnityEnvironmentException: Couldn't launch the 3DBall environment. Provided file
 ```
 
 ## Fix
+
+In my case it was a question of the invilid AWS zone specified in the s3_sync config.
+
+When running the `middleman s3_sync` command. I was seeing the following warnings and they gave me a clue about where the problem is:
+
+```
+[fog][WARNING] fog: followed redirect to s3-us-west-1.amazonaws.com, connecting to the matching region will be more performant
+```
+
+Go to your middleman config.rb
