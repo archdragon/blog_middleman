@@ -1,4 +1,10 @@
 .article-preview data-main-tag="#{article.tags.first}"
+  section.extra-info.separator_top-margin
+    .tag-icon.color-background
+      .tag-icon__inside
+    a.tag-name href="/tags/#{article.tags.first}.html" = article.tags.first
+    .pull-right.transparent_stronger =article.date.strftime('%b %e, %Y')
+
   header
     h2
       a.post-title href="#{article.url}" = article.title
@@ -12,6 +18,3 @@
 
   // .icon = inline_svg(article.data.icon || 'default')
 
-  section.extra-info.separator_top-margin
-    span.tag-name.color-background.transparent_stronger = article.tags.first
-    span.transparent_stronger =article.date.strftime('%b %e, %Y')

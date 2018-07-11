@@ -5,10 +5,12 @@
 
 $left-icon-width: 50px;
 $preview-icon-size: 20px;
-$preview-cards-margin: 48px;
+$preview-cards-margin: 64px;
 
 body {
   background-color: $theme-light-shades;
+  // background-image: url('/images/white_paperboard/white_paperboard.png');
+  background-size: 256px 256px;
   color: $theme-dark-shades;
   font-weight: 400;
 
@@ -36,7 +38,7 @@ header.welcome-header {
 }
 
 main {
-  padding: 30px 15px 1rem 15px;
+  padding: 40px 15px 1rem 15px;
 }
 
 header.welcome-header {
@@ -112,13 +114,14 @@ h2 .post-title {
   background-color: #fff;
   font-size: 1rem;
   margin-bottom: $preview-cards-margin;
-  padding: 2.25rem 2rem;
+  padding: 2.75rem 3rem 3.1rem 3rem;
   border-bottom: 3px solid #eee;
   text-decoration: none;
 
   h2 {
     padding: 0;
     margin: 0;
+    margin-bottom: 1.5rem;
     font-size: 1.5rem;
     line-height: 1.6;
   }
@@ -128,6 +131,11 @@ h2 .post-title {
     color: $theme-dark-accent;
     padding-bottom: 0;
     margin-bottom: 0;
+  }
+
+  .extra-info {
+    margin-bottom: 1.5rem;
+    margin-top: 0;
   }
 
   .icon {
@@ -152,10 +160,34 @@ h2 .post-title {
   }
 
   .tag-name {
+    text-decoration: none;
     display: inline-block;
-    padding: 1px 5px 2px 5px;
-    margin-right: 8px;
-    border-radius: 3px;
+    margin-left: 6px;
+    position: relative;
+    line-height: 1.1;
+    opacity: 0.75;
+    vertical-align: top;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .tag-icon {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    line-height: 18px;
+    text-align: center;
+  }
+
+  .tag-icon__inside {
+    color: #fff;
+    position: relative;
+    //top: -2px;
   }
 
   transition: 0.15s all ease-out;
@@ -170,30 +202,48 @@ h2 .post-title {
 }
 
 .article-preview {
-  margin: 0 15px 30px 15px;
+  margin: 0 15px 48px 15px;
   display: block;
   flex-shrink: 1;
   flex-grow: 1;
 }
 
 .article-preview[data-main-tag="javascript"] .color-background {
-  //background-color: #e1b400;
+  background-color: #e1b400;
 }
 
 .article-preview[data-main-tag="ruby"] .color-background {
-  //background-color: #e74c3c;
+  background-color: #e74c3c;
 }
 
 .article-preview[data-main-tag="css"] .color-background {
-  //background-color: #e67e22;
+  background-color: #e67e22;
 }
 
 .article-preview[data-main-tag="elixir"] .color-background {
-  //background-color: #9b59b6;
+  background-color: #9b59b6;
 }
 
+.article-preview[data-main-tag="unity"] .color-background {
+  background-color: #333;
+}
+
+.article-preview[data-main-tag="photoshop"] .color-background,
+.article-preview[data-main-tag="Photoshop"] .color-background {
+  background-color: #009fff;
+}
+
+.article-preview[data-main-tag="go"] .color-background {
+  background-color: #007fee;
+}
+
+.article-preview[data-main-tag="python"] .color-background {
+  background-color: #005fbe;
+}
+
+.gray-background,
 .color-background {
-  background-color: $theme-light-shades;
+  background-color: $theme-dark-accent;
 }
 
 footer {
