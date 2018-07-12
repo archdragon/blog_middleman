@@ -241,6 +241,18 @@ h2 .post-title {
   background-color: #005fbe;
 }
 
+.article-preview[data-main-tag="machine-learning"] .color-background {
+  background-color: #009fee;
+}
+
+.article-preview[data-main-tag="middleman"] .color-background {
+  background-color: #ffaa55;
+}
+
+.article-preview[data-main-tag="postgres"] .color-background {
+  background-color: #33aa88;
+}
+
 .gray-background,
 .color-background {
   background-color: $theme-dark-accent;
