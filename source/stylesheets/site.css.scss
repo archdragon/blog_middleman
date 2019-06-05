@@ -108,22 +108,92 @@ h2 .post-title {
   margin: 5px 0 15px 0;
 }
 
+.falling-guy {
+  background-image: url('/images/blobs/blob_small1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  right: 50px;
+  top: -30px;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+  transition: all 0.3s;
+
+  &[data-fallen="true"] {
+    transform: translateY(50px);
+    opacity: 0;
+    z-index: -1
+  }
+}
+
 .article-preview {
+  .falling-guy {
+    visibility: hidden;
+  }
+
+  &:nth-child(2) {
+    .falling-guy {
+      visibility: visible;
+    }
+  }
+
+  &:nth-child(2n) {
+    .extra-info .item:first-child {
+      transform: rotate(0deg);
+    }
+  }
+
+  &:nth-child(3n) {
+    .extra-info .item:first-child {
+      transform: rotate(1deg);
+    }
+  }
+
+  &:nth-child(4n) {
+    .extra-info .item {
+      transform: rotate(-2deg);
+    }
+  }
+
+  &:nth-child(5n) {
+    .extra-info .item {
+      transform: rotate(3deg);
+    }
+    .extra-info .item:first-child {
+      transform: rotate(-2deg);
+    }
+  }
+
+  &:nth-child(7n) {
+    .extra-info .item:first-child {
+      transform: rotate(2deg);
+    }
+  }
+}
+
+
+.article-preview {
+  border-radius: 10px;
   color: inherit;
   display: block;
   background-color: #fff;
-  font-size: 1rem;
+  font-size: 1.25rem;
   margin-bottom: $preview-cards-margin;
-  padding: 2.75rem 3rem 3.1rem 3rem;
+  padding: 2rem 2.5rem 3rem 2.5rem;
   border-bottom: 3px solid #eee;
   text-decoration: none;
+  position: relative;
 
   h2 {
     padding: 0;
     margin: 0;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 1.6;
+  }
+
+  section.body {
+    font-size: 1rem;
   }
 
   section.body p,
@@ -134,8 +204,25 @@ h2 .post-title {
   }
 
   .extra-info {
-    margin-bottom: 1.5rem;
-    margin-top: 0;
+    opacity: 0.4;
+    margin: 0;
+    font-size: 1rem;
+    position: absolute;
+    right: 12px;
+    bottom: 14px;
+
+    .item {
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 3px;
+      display: inline-block;
+      font-size: 13px;
+      margin-left: 15px;
+      padding: 5px 9px;
+    }
+
+    .item:first-child {
+      transform: rotate(4deg);
+    }
   }
 
   .icon {
@@ -161,15 +248,14 @@ h2 .post-title {
 
   .tag-name {
     text-decoration: none;
-    display: inline-block;
-    margin-left: 6px;
-    position: relative;
-    line-height: 1.1;
-    opacity: 0.75;
-    vertical-align: top;
+    color: inherit;
 
     &:hover {
       text-decoration: underline;
+    }
+
+    &:empty {
+      display: none;
     }
   }
 

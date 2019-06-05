@@ -1,20 +1,14 @@
 .article-preview data-main-tag="#{article.tags.first}"
-  section.extra-info.separator_top-margin
-    .tag-icon.color-background
-      .tag-icon__inside
-    a.tag-name href="/tags/#{article.tags.first}.html" = article.tags.first
-    .pull-right.transparent_stronger =article.date.strftime('%b %e, %Y')
-
+  .falling-guy
+  .extra-info
+    .item =article.date.strftime('%b %e, %Y')
+    = ArticleHelpers.main_tag_link(article)
   header
     h2
       a.post-title href="#{article.url}" = article.title
-      //a.background href="#{article.url}"
-      //  .tag-name = article.tags.first
 
   section.body
     p.separator_top-margin
-      =ArticleHelpers.summary(article)
+      = ArticleHelpers.summary(article)
       a.read-more href="#{article.url}" &raquo;
-
-  // .icon = inline_svg(article.data.icon || 'default')
 

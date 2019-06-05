@@ -12,5 +12,5 @@ header.welcome-header
 
 main
   section.articles-list
-    - blog.articles.each do |article|
-      = partial 'partials/article_preview', locals: { article: article }
+    - blog.articles.each_with_index do |article, index|
+      = partial 'partials/article_preview', locals: { article: article, index: index }
