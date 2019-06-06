@@ -17,7 +17,10 @@ module CustomHelpers
 
     def self.main_tag_link(article)
       normalized_name = article.tags.first
-      normalized_name = normalized_name ? normalized_name.downcase : ""
+
+      return "" unless normalized_name
+
+      normalized_name = normalized_name.downcase
 
       "<a class='item tag-name' href='/tags/#{normalized_name}.html'>
         #{normalized_name}

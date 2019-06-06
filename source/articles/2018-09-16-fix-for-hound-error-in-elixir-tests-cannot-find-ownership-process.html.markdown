@@ -2,7 +2,7 @@
 custom_summary: "Making Hound tests work by correctly setting up Ecto Sandbox."
 date: 2018-09-16 16:39 UTC
 id: "hound-ownership-process"
-tags: "Elixir, Hound, ecto"
+tags: "elixir, hound, ecto"
 title: "Fix for Hound error in Elixir tests - 'cannot find ownership process'"
 ---
 

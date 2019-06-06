@@ -2,7 +2,7 @@
 title: Tween/Easing in Photoshop CC animations
 date: 2017-12-26 14:53 UTC
 id: 'easing-in-photoshop'
-tags: 'Photoshop, animation, easing'
+tags: 'photoshop, Photoshop, animation, easing'
 custom_summary: 'How to handle easing when animating in Photoshop.'
 
 ---
