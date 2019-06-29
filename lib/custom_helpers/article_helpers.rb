@@ -15,16 +15,28 @@ module CustomHelpers
       article.data.id
     end
 
+    def self.main_image_link(article)
+      tag_name = ArticleHelpers.main_tag_name(article)
+
+      return "/images/headings/#{tag_name}.jpg" unless article.data.image
+
+      article.data.image
+    end
+
     def self.main_tag_link(article)
+      name = ArticleHelpers.main_tag_name(article)
+
+      "<a class='item tag-name' href='/tags/#{name}.html'>
+        #{name}
+      </a>"
+    end
+
+    def self.main_tag_name(article)
       normalized_name = article.tags.first
 
       return "" unless normalized_name
 
       normalized_name = normalized_name.downcase
-
-      "<a class='item tag-name' href='/tags/#{normalized_name}.html'>
-        #{normalized_name}
-      </a>"
     end
   end
 end

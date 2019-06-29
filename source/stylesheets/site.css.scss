@@ -1,7 +1,5 @@
 @charset "utf-8";
-@import "normalize";
 @import "variables";
-@import "grid12";
 
 $left-icon-width: 50px;
 $preview-icon-size: 20px;
@@ -243,19 +241,33 @@ h2 .post-title {
   background-color: #fff;
   font-size: 1.25rem;
   margin-bottom: $preview-cards-margin;
-  padding: 2rem 2.5rem 3rem 2.5rem;
-  border-bottom: 3px solid #eee;
+  //padding: 0.5rem 1rem 1.5rem 1rem;
+  //border-bottom: 3px solid #eee;
+  border-width: 0;
   text-decoration: none;
   position: relative;
+
+  .main-image {
+    border-radius: 10px 10px 0 0;
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
 
   h2 {
     padding: 0;
     margin: 0;
+    margin-bottom: 0.5rem;
     font-size: 1.25rem;
     line-height: 1.6;
   }
 
   section.body {
+    padding: 1.5rem 2rem 2.5rem 2rem;
     font-size: 1rem;
   }
 
@@ -352,7 +364,7 @@ h2 .post-title {
 }
 
 .article-preview {
-  margin: 0 15px 48px 15px;
+  margin: 0 5px 40px 5px;
   display: block;
   flex-shrink: 1;
   flex-grow: 1;

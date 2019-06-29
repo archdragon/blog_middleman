@@ -1,14 +1,20 @@
-.article-preview data-main-tag="#{article.tags.first}"
-  .falling-guy
-  .extra-info
-    .item =article.date.strftime('%b %e, %Y')
-    = ArticleHelpers.main_tag_link(article)
-  header
-    h2
-      a.post-title href="#{article.url}" = article.title
+.col-md-6
+  .card.article-preview data-main-tag="#{article.tags.first}"
+    .main-image
+      img src="#{ArticleHelpers.main_image_link(article)}"
 
-  section.body
-    p.separator_top-margin
-      = ArticleHelpers.summary(article)
-      a.read-more href="#{article.url}" &raquo;
+    .falling-guy
+    .extra-info
+      .item =article.date.strftime('%b %e, %Y')
+      = ArticleHelpers.main_tag_link(article)
+
+    section.body.card-body
+      header
+        h2
+          a.post-title href="#{article.url}" = article.title
+
+      section
+        p.separator_top-margin
+          = ArticleHelpers.summary(article)
+          a.read-more href="#{article.url}" &raquo;
 

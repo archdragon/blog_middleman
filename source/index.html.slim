@@ -12,5 +12,14 @@ header.welcome-header
 
 main
   section.articles-list
+    .article-preview
+      header
+        h2
+          .post-title Hello!
+
+      section.body
+        p.separator_top-margin
+          | My name is Przemek and I build apps, games and startups.
+
     - blog.articles.each_with_index do |article, index|
       = partial 'partials/article_preview', locals: { article: article, index: index }
